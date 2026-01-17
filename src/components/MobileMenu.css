@@ -1,0 +1,137 @@
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-content {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 350px;
+    height: 100%;
+    background: #fff;
+    transition: left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu-overlay.open .mobile-menu-content {
+    left: 0;
+}
+
+.mobile-menu-header {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.close-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    padding: 0;
+}
+
+.mobile-menu-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 20px;
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-list li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-nav-list li a {
+    display: block;
+    padding: 18px 0;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.mobile-nav-list li.has-dropdown {
+    display: block;
+}
+
+.nav-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.sub-nav-list {
+    list-style: none;
+    padding: 0 0 10px 20px;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.has-dropdown.expanded .sub-nav-list {
+    max-height: 500px;
+    transition: max-height 0.4s ease-in;
+}
+
+.sub-nav-list li {
+    border-bottom: none !important;
+}
+
+.sub-nav-list li a {
+    padding: 8px 0 !important;
+    font-size: 16px !important;
+    color: #666 !important;
+    font-family: 'Figtree', sans-serif !important;
+}
+
+.plus-icon {
+    font-size: 24px;
+    color: #000;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+}
+
+.mobile-menu-footer {
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.mobile-account-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-family: 'Figtree', sans-serif;
+    font-size: 16px;
+}

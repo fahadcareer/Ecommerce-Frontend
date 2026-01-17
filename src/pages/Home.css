@@ -1,0 +1,307 @@
+.home-page {
+    padding-bottom: 0;
+}
+
+.collections-section {
+    padding: 6rem 0;
+    text-align: center;
+    background: #fdfaf5;
+    /* Cream background from reference */
+}
+
+.collections-section h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 4rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    color: #000000;
+}
+
+.list-collections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.list-collections_item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 0.71;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.list-collections_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.list-collections_item:hover img {
+    transform: scale(1.1);
+}
+
+.collection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+    /* Subtle darkening for readability */
+}
+
+.collection-overlay h3 {
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+}
+
+/* Product Feed */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.home-product-card {
+    transition: all 0.3s ease;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-img-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 0.75;
+    /* 348 / 464 */
+    overflow: hidden;
+    background: #f8fafc;
+    margin-bottom: 1rem;
+}
+
+.product-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.home-product-card:hover img {
+    transform: scale(1.05);
+}
+
+.save-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #56112A;
+    /*Maroon */
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.quick-add-btn-overlay {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    /* Small rounded as per screenshot */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 20;
+}
+
+.home-product-card:hover .quick-add-btn-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-card-info {
+    text-align: center;
+    width: 100%;
+}
+
+.product-card-info h4 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+    font-family: var(--text-font-family);
+}
+
+.price-line {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.current-price {
+    font-weight: 600;
+    color: #56112A;
+    font-size: 14px;
+}
+
+.old-price {
+    font-size: 13px;
+    color: #1a1a1a;
+    opacity: 0.4;
+    text-decoration: line-through;
+}
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .collections-section {
+        padding: 3rem 0;
+    }
+
+    .collections-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .list-collections {
+        display: flex;
+        overflow-x: auto;
+        gap: 12px;
+        padding: 0 15px 10px 15px;
+        scroll-snap-type: x mandatory;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        justify-content: flex-start;
+    }
+
+    .list-collections::-webkit-scrollbar {
+        display: none;
+    }
+
+    .list-collections_item {
+        flex: 0 0 165px !important;
+        width: 165px !important;
+        height: 231.66px !important;
+        scroll-snap-align: start;
+        aspect-ratio: auto !important;
+    }
+
+    .list-collections_item img {
+        width: 165px !important;
+        height: 231.66px !important;
+        object-fit: cover !important;
+    }
+
+    .collection-overlay h3 {
+        font-size: 1.1rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 15px;
+    }
+
+    .product-card-info h4 {
+        font-size: 13px;
+    }
+
+    .current-price {
+        font-size: 13px;
+    }
+
+    .quick-add-btn-overlay {
+        opacity: 1;
+        /* Always visible on mobile */
+        transform: none;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+/* Category Showcase Sections */
+.home-category-rows {
+    padding-bottom: 4rem;
+}
+
+.category-showcase-section {
+    margin-bottom: 5rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    color: #000;
+    letter-spacing: 2px;
+}
+
+.view-all-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.view-all-btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 14px 40px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid #000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-radius: 0;
+}
+
+.view-all-btn:hover {
+    background: #fff;
+    color: #000;
+}

@@ -1,0 +1,137 @@
+.contact-page {
+    background: #fff;
+}
+
+.contact-container {
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+    max-width: 1000px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.contact-header p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contact-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+/* Info Column */
+.info-section {
+    margin-bottom: 3rem;
+}
+
+.info-section h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.info-section p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.info-section .highlight {
+    font-weight: 500;
+}
+
+/* Form Column */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: #fff;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.contact-submit-btn {
+    width: 100%;
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-submit-btn:hover {
+    background: #333;
+}
+
+/* Get Direction */
+.get-direction-section {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 4rem;
+}
+
+.get-direction-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.map-link {
+    color: #000;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .contact-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
